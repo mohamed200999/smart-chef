@@ -1,0 +1,9 @@
+﻿الملف,الوصف
+**[index.html](sandbox:///mnt/agents/output/index.html)**,الصفحة الرئيسية (موجودة عندك)
+**[admin.html](sandbox:///mnt/agents/output/admin.html)**,**لوحة الإدارة الجديدة** 🔐
+**[css/style.css](sandbox:///mnt/agents/output/css/style.css)**,التنسيقات
+**[js/store.js](sandbox:///mnt/agents/output/js/store.js)**,قاعدة البيانات (localStorage)
+**[js/logo.js](sandbox:///mnt/agents/output/js/logo.js)**,اللوجو
+**[js/ui.js](sandbox:///mnt/agents/output/js/ui.js)**,المكونات المشتركة
+**[js/app.js](sandbox:///mnt/agents/output/js/app.js)**,منطق الموقع الرئيسي
+**[js/admin.js](sandbox:///mnt/agents/output/js/admin.js)**,**منطق لوحة الإدارة** ⚙️

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إتمام الطلب — Smart Chef</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div data-logo="md" data-logo-href="index.html" class="logo-mount"></div>
+      <nav class="main-nav">
+        <a href="index.html">المتجر</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="btn btn-ghost btn-sm" id="accountLink">دخول</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container checkout-page">
+    <div class="checkout-steps">
+      <span class="step done">① السلة</span>
+      <span class="step active">② بيانات التوصيل</span>
+      <span class="step">③ الدفع</span>
+    </div>
+
+    <h1>إتمام الطلب</h1>
+    <p class="text-muted" style="margin-bottom:1.5rem">راجع منتجاتك ثم أدخل بيانات التوصيل — يمكنك جمع أكثر من منتج في طلب واحد</p>
+
+    <div class="checkout-layout">
+      <aside class="checkout-summary admin-card" id="orderSummary">
+        <h3>ملخص الطلب</h3>
+        <div id="summaryItems"></div>
+        <div class="summary-line" id="summarySubtotalRow">
+          <span>مجموع المنتجات</span>
+          <span id="summarySubtotal">0 ج.م</span>
+        </div>
+        <div class="summary-line" id="summaryShippingRow">
+          <span>الشحن</span>
+          <span id="summaryShipping">مجاناً (القاهرة)</span>
+        </div>
+        <div class="cart-total-row" style="margin-top:0.5rem;padding-top:1rem;border-top:1px solid var(--border)">
+          <span>الإجمالي</span>
+          <span id="summaryTotal" class="product-price">0 ج.م</span>
+        </div>
+        <p class="text-muted" style="font-size:0.85rem;margin-top:0.75rem" id="depositHint">
+          سيتم تحويل عربون (<span id="depositPercentLabel">50</span>%) والباقي عند الاستلام
+        </p>
+      </aside>
+
+      <section class="checkout-form-wrap admin-card">
+        <div id="loginHint" class="alert" style="background:rgba(255,107,0,0.1);border-color:var(--orange);margin-bottom:1rem;display:none">
+          <a href="account.html" style="color:var(--orange);font-weight:600">سجّل دخولك</a> لملء بياناتك تلقائياً
+        </div>
+        <div id="checkoutAlert"></div>
+        <form id="checkoutForm">
+          <div class="form-group">
+            <label for="custName">الاسم الكامل *</label>
+            <input type="text" id="custName" required />
+          </div>
+          <div class="form-group">
+            <label for="custEmail">البريد الإلكتروني *</label>
+            <input type="email" id="custEmail" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="custPhone">رقم الهاتف *</label>
+            <input type="tel" id="custPhone" required placeholder="01xxxxxxxxx" />
+          </div>
+          <div class="form-group">
+            <label for="custAltPhone">رقم هاتف بديل *</label>
+            <input type="tel" id="custAltPhone" required placeholder="للتواصل الاحتياطي" />
+          </div>
+          <div class="form-group">
+            <label for="custGovernorate">المحافظة *</label>
+            <select id="custGovernorate" required>
+              <option value="">اختر المحافظة</option>
+            </select>
+            <p class="text-muted" style="font-size:0.8rem;margin-top:0.35rem" id="shippingNote">
+              الشحن مجاناً داخل القاهرة — خارج القاهرة +100 ج.م
+            </p>
+          </div>
+          <div class="form-group">
+            <label for="custAddress">العنوان التفصيلي *</label>
+            <textarea id="custAddress" rows="3" required placeholder="الحي، الشارع، رقم المبنى، الدور، علامة مميزة"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="custNotes">ملاحظات على الطلب</label>
+            <textarea id="custNotes" rows="2" placeholder="وقت التوصيل المفضل أو تعليمات إضافية"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-block">متابعة للدفع</button>
+            <a href="index.html" class="btn btn-ghost btn-block">متابعة التسوق</a>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/store.js"></script>
+  <script src="js/logo.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

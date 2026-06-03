@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>حسابي — Smart Chef Uniform</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div data-logo="md" data-logo-href="index.html" class="logo-mount"></div>
+      <nav class="main-nav">
+        <a href="index.html">المتجر</a>
+      </nav>
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-ghost btn-sm">🏠 الرئيسية</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-narrow" style="padding:2rem 0 4rem">
+    <div id="guestView">
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" data-tab="login">تسجيل دخول</button>
+        <button type="button" class="auth-tab" data-tab="register">إنشاء حساب</button>
+      </div>
+
+      <div id="loginPanel" class="auth-panel">
+        <h1>مرحباً بعودتك</h1>
+        <p class="text-muted">سجّل دخولك لمتابعة طلباتك بسرعة</p>
+        <div id="loginAlert"></div>
+        <form id="loginForm" class="auth-form">
+          <div class="form-group">
+            <label>البريد أو رقم الهاتف</label>
+            <input type="text" id="loginKey" required autocomplete="username" />
+          </div>
+          <div class="form-group">
+            <label>كلمة المرور</label>
+            <input type="password" id="loginPass" required autocomplete="current-password" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">دخول</button>
+        </form>
+      </div>
+
+      <div id="registerPanel" class="auth-panel" style="display:none">
+        <h1>حساب جديد</h1>
+        <p class="text-muted">أنشئ حساباً لحفظ بياناتك وتسهيل الشراء</p>
+        <div id="registerAlert"></div>
+        <form id="registerForm" class="auth-form">
+          <div class="form-group">
+            <label>الاسم الكامل *</label>
+            <input type="text" id="regName" required />
+          </div>
+          <div class="form-group">
+            <label>البريد الإلكتروني *</label>
+            <input type="email" id="regEmail" required autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label>رقم الهاتف *</label>
+            <input type="tel" id="regPhone" required placeholder="01xxxxxxxxx" />
+          </div>
+          <div class="form-group">
+            <label>كلمة المرور * (6 أحرف فأكثر)</label>
+            <input type="password" id="regPass" required minlength="6" autocomplete="new-password" />
+          </div>
+          <div class="form-group">
+            <label>تأكيد كلمة المرور *</label>
+            <input type="password" id="regPass2" required minlength="6" autocomplete="new-password" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">إنشاء الحساب</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="userView" style="display:none">
+      <h1>مرحباً، <span id="userName"></span></h1>
+      <p class="text-muted" id="userEmail"></p>
+      <button type="button" class="btn btn-ghost btn-sm" id="logoutBtn" style="margin-bottom:1.5rem">تسجيل خروج</button>
+
+      <div class="admin-card">
+        <h3>بياناتي</h3>
+        <form id="profileForm">
+          <div class="form-group">
+            <label>الاسم</label>
+            <input type="text" id="profName" required />
+          </div>
+          <div class="form-group">
+            <label>البريد</label>
+            <input type="email" id="profEmail" required />
+          </div>
+          <div class="form-group">
+            <label>الهاتف</label>
+            <input type="tel" id="profPhone" required />
+          </div>
+          <div class="form-group">
+            <label>هاتف بديل</label>
+            <input type="tel" id="profAltPhone" />
+          </div>
+          <div class="form-group">
+            <label>العنوان</label>
+            <textarea id="profAddress" rows="2"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">حفظ التعديلات</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h3>طلباتي</h3>
+        <div id="userOrders"></div>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast"></div>
+  <script src="js/store.js"></script>
+  <script src="js/logo.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>

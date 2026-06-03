@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إدارة المتجر — Smart Chef</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="admin-page">
+    <div id="loginView" class="admin-login-box">
+      <div data-logo="md" data-logo-href="none" class="logo-mount" style="display:flex;justify-content:center;margin-bottom:1.5rem"></div>
+      <h2 style="text-align:center;margin-bottom:1rem">لوحة إدارة المتجر</h2>
+      <p style="text-align:center;color:var(--text-muted);margin-bottom:1rem;font-size:0.9rem">أدخل كلمة المرور للمتابعة</p>
+      <div id="loginAlert"></div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="adminPass">كلمة المرور</label>
+          <input type="password" id="adminPass" required autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">دخول</button>
+      </form>
+      <p style="text-align:center;margin-top:1rem"><a href="index.html" style="color:var(--orange)">← العودة للمتجر</a></p>
+    </div>
+
+    <div id="adminPanel" class="admin-panel" style="display:none">
+      <div class="admin-header">
+        <div>
+          <h1>إدارة المنتجات</h1>
+          <p style="color:var(--text-muted)">إضافة منتجات، مقاسات، والكميات</p>
+        </div>
+        <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+          <a href="index.html" class="btn btn-outline btn-sm">المتجر</a>
+          <button type="button" class="btn btn-ghost btn-sm" id="logoutBtn">خروج</button>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <h3>➕ إضافة منتج جديد</h3>
+        <div id="addAlert"></div>
+        <form id="addProductForm">
+          <div class="form-group">
+            <label for="prodImage">صورة المنتج *</label>
+            <input type="file" id="prodImage" accept="image/*" required />
+            <div class="image-preview" id="imagePreview"><span style="color:var(--text-muted);font-size:0.8rem">معاينة</span></div>
+          </div>
+          <div class="form-group">
+            <label for="prodName">اسم المنتج (عربي) *</label>
+            <input type="text" id="prodName" required />
+          </div>
+          <div class="form-group">
+            <label for="prodCategory">القسم *</label>
+            <select id="prodCategory" required>
+              <option value="jackets">جواكيت</option>
+              <option value="aprons">مرايل</option>
+              <option value="caps">كابات</option>
+              <option value="pants">بناطيل</option>
+              <option value="soap">صابوه</option>
+              <option value="toques">توكات</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="prodPrice">السعر (ج.م) *</label>
+            <input type="number" id="prodPrice" min="1" required />
+          </div>
+          <div class="form-group">
+            <label for="prodDesc">الوصف</label>
+            <textarea id="prodDesc" rows="2"></textarea>
+          </div>
+          <div class="form-group">
+            <label>المقاسات والكمية *</label>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.5rem">أضف كل مقاس مع عدد القطع المتاحة</p>
+            <div id="sizesInputs">
+              <div class="sizes-input-row" style="display:flex;gap:0.5rem;margin-bottom:0.5rem">
+                <input type="text" placeholder="مقاس (مثال: M)" class="size-name" style="flex:1" />
+                <input type="number" placeholder="الكمية" class="size-qty" min="0" style="flex:1" />
+              </div>
+            </div>
+            <button type="button" class="btn btn-ghost btn-sm" id="addSizeRow">+ مقاس آخر</button>
+          </div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;margin-bottom:1rem">
+            <button type="button" class="btn btn-outline btn-sm" id="clearOrdersBtn">مسح آخر الطلبات</button>
+            <span style="color:var(--text-muted);font-size:0.85rem">يمسح الطلبات المحفوظة من لوحة الإدارة</span>
+          </div>
+          <button type="submit" class="btn btn-primary">حفظ المنتج</button>
+        </form>
+      </div>
+
+      <div class="admin-card">
+        <h3>📦 المنتجات المضافة من لوحة الإدارة</h3>
+        <div class="admin-products-list" id="customProductsList"></div>
+      </div>
+
+      <div class="admin-card" id="storeProductsCard" style="display:none">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:0.5rem;flex-wrap:wrap">
+          <h3>🛒 تعديل منتجات المتجر</h3>
+          <span id="adminRoleLabel" style="font-size:0.9rem;color:var(--text-muted)"></span>
+        </div>
+        <div id="allProductsAlert"></div>
+        <div id="allProductsList"></div>
+      </div>
+
+      <div class="admin-card">
+        <h3>📋 آخر الطلبات</h3>
+        <div id="ordersList"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/logo.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

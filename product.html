@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل المنتج — Smart Chef Uniform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div data-logo="md" data-logo-href="index.html" class="logo-mount"></div>
+      <nav class="main-nav">
+        <a href="index.html#jackets">جواكيت</a>
+        <a href="index.html#aprons">مرايل</a>
+        <a href="index.html#caps">كابات</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="btn btn-ghost btn-sm" id="accountLink">دخول</a>
+        <button type="button" class="icon-btn" id="favBtn" aria-label="المفضلة">♥
+          <span class="cart-badge hidden" id="favBadge">0</span>
+        </button>
+        <button type="button" class="icon-btn" id="cartBtn" aria-label="سلة المشتريات">🛒
+          <span class="cart-badge hidden" id="cartBadge">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container product-page" id="productMain">
+    <p style="text-align:center;padding:4rem;color:var(--text-muted)">جاري التحميل...</p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div data-logo="sm" data-logo-href="index.html" class="logo-mount"></div>
+      <div class="footer-contact-wrap" data-contact-bar="contact-bar--footer"></div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="favOverlay"></div>
+  <aside class="fav-drawer" id="favDrawer">
+    <div class="cart-drawer-header">
+      <h2>♥ المفضلة</h2>
+      <button type="button" class="icon-btn" id="closeFav">✕</button>
+    </div>
+    <div class="cart-items" id="favItems"></div>
+  </aside>
+
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>🛒 سلة المشتريات</h2>
+      <button type="button" class="icon-btn" id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>الإجمالي</span>
+        <span id="cartTotal">0 ج.م</span>
+      </div>
+      <a href="checkout.html" class="btn btn-primary btn-block">إتمام الطلب</a>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/logo.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/product.js"></script>
+</body>
+</html>

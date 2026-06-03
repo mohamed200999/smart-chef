@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Chef Uniform — يونيفورم الشيفات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tajawal:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <div data-logo="md" data-logo-href="index.html" class="logo-mount"></div>
+      <nav class="main-nav" id="mainNav">
+        <a href="#jackets">جواكيت</a>
+        <a href="#aprons">مرايل</a>
+        <a href="#caps">كابات</a>
+        <a href="#pants">بناطيل</a>
+        <a href="#soap">صابوه</a>
+        <a href="#toques">توكات</a>
+      </nav>
+      <div class="header-actions">
+        <a href="account.html" class="btn btn-ghost btn-sm" id="accountLink">دخول</a>
+        <a href="admin.html" class="btn btn-ghost btn-sm" title="لوحة الإدارة">⚙️</a>
+        <button type="button" class="icon-btn" id="favBtn" aria-label="المفضلة">♥
+          <span class="cart-badge hidden" id="favBadge">0</span>
+        </button>
+        <button type="button" class="icon-btn" id="cartBtn" aria-label="سلة المشتريات">🛒
+          <span class="cart-badge hidden" id="cartBadge">0</span>
+        </button>
+        <button type="button" class="icon-btn menu-toggle" id="menuToggle" aria-label="القائمة">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div data-logo="lg" data-logo-href="none" class="logo-mount" style="justify-content:center;margin-bottom:1rem;display:flex"></div>
+      <h1>يونيفورم احترافي لطاقم المطبخ</h1>
+      <p>جواكيت، مرايل، كابات وتوكات بجودة عالية — Smart Chef Uniform</p>
+      <a href="#jackets" class="btn btn-primary">تسوق الآن</a>
+      <nav class="category-chips" id="categoryChips" aria-label="الأقسام"></nav>
+    </div>
+  </section>
+
+  <main class="container">
+    <section class="section" id="jackets">
+      <div class="section-header">
+        <h2 class="section-title"><span>🧥</span> جواكيت الشيف</h2>
+        <div class="section-header-actions">
+          <span class="product-price" style="font-size:0.9rem">من 500 ج.م · XL/XXL 600 ج.م</span>
+          <a href="#jackets" class="section-chip" data-section-chip="jackets"></a>
+        </div>
+      </div>
+      <div class="products-grid" data-category="jackets"></div>
+    </section>
+
+    <section class="section" id="aprons">
+      <div class="section-header">
+        <h2 class="section-title"><span>👨‍🍳</span> مرايل</h2>
+        <a href="#aprons" class="section-chip" data-section-chip="aprons"></a>
+      </div>
+      <div class="products-grid" data-category="aprons"></div>
+    </section>
+
+    <section class="section" id="caps">
+      <div class="section-header">
+        <h2 class="section-title"><span>🧢</span> كابات</h2>
+        <a href="#caps" class="section-chip" data-section-chip="caps"></a>
+      </div>
+      <div class="products-grid" data-category="caps"></div>
+    </section>
+
+    <section class="section" id="pants">
+      <div class="section-header">
+        <h2 class="section-title"><span>👖</span> بناطيل</h2>
+        <a href="#pants" class="section-chip" data-section-chip="pants"></a>
+      </div>
+      <div class="products-grid" data-category="pants"></div>
+    </section>
+
+    <section class="section" id="soap">
+      <div class="section-header">
+        <h2 class="section-title">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="section-icon" aria-hidden="true">
+            <path fill="#ff6b00" d="M12 44c4 0 6-6 10-6h18c4 0 6 6 10 6l4 4c0 6-4 10-10 10H20c-6 0-10-4-10-10z"/>
+            <path fill="#fff" d="M16 40c0-6 6-10 12-10h22c4 0 8 2 8 6s-4 4-8 4H30c-4 0-12 2-12 0z"/>
+          </svg>
+          صابوه
+        </h2>
+        <a href="#soap" class="section-chip" data-section-chip="soap"></a>
+      </div>
+      <div class="products-grid" data-category="soap"></div>
+    </section>
+
+    <section class="section" id="toques">
+      <div class="section-header">
+        <h2 class="section-title"><span>👒</span> توكات</h2>
+        <a href="#toques" class="section-chip" data-section-chip="toques"></a>
+      </div>
+      <div class="products-grid" data-category="toques"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div data-logo="sm" data-logo-href="index.html" class="logo-mount"></div>
+        <div class="footer-links">
+          <a href="index.html">الرئيسية</a>
+          <a href="account.html">حسابي</a>
+          <a href="admin.html">إدارة المتجر</a>
+        </div>
+      </div>
+      <div class="footer-contact-wrap" data-contact-bar="contact-bar--footer"></div>
+      <p>© 2026 Smart Chef Uniform — جميع الحقوق محفوظة</p>
+    </div>
+  </footer>
+
+  <div class="overlay" id="favOverlay"></div>
+  <aside class="fav-drawer" id="favDrawer">
+    <div class="cart-drawer-header">
+      <h2>♥ المفضلة</h2>
+      <button type="button" class="icon-btn" id="closeFav">✕</button>
+    </div>
+    <div class="cart-items" id="favItems"></div>
+  </aside>
+
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h2>🛒 سلة المشتريات</h2>
+      <button type="button" class="icon-btn" id="closeCart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>الإجمالي</span>
+        <span id="cartTotal">0 ج.م</span>
+      </div>
+      <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;text-align:center">يمكنك جمع عدة منتجات في طلب واحد</p>
+      <button type="button" class="btn btn-primary btn-block" id="checkoutBtn">إتمام الطلب</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/supabase.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/logo.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
